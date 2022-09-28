@@ -16,7 +16,7 @@ which is quite nice, since half of the time I was reading Kubernetes documentati
 - I split `Customer` create form into two (Person/Company), there could be a javascript
 that would dynamically change part of the form, but... there's no such requirement,
 keeping it simple means it's easy to change and understand, it's clear for user too and
-there's "rule of three" as well, it hard to justify possibly complicated solution,
+there's "rule of three" as well, it is hard to justify possibly complicated solution,
 when there are just two different cases.
 - It is not clear, whether one `Order` can have multiple instances of one `Item` in it.
 The common sense says yes, the diagram can be interpreted both ways, but I would expect
