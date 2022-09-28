@@ -1,0 +1,13 @@
+<div>
+    <b>{{ customer.discriminator.capitalize() }}</b><br>
+    {% if customer.discriminator == 'person' %}
+        first_name: {{ customer.first_name }}<br>
+        last_name: {{ customer.last_name }}<br>
+        birthday: {{ customer.birthday }}<br>
+    {% else %}
+        ic: {{ customer.ic }}<br>
+        dic: {{ customer.dic }}<br>
+    {% endif %}
+    email: {{ customer.email }}<br>
+    phone: {{ customer.phone }}<br>
+</div>

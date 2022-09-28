@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-sm-3">
+        <form action="{{ url_for('create_customer', type_of_customer=type_of_customer) }}" method="post">
+            {% if type_of_customer == 'person' %}
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First name"
+                       required>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last name"
+                       required>
+                <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Birthday" required>
+            {% else %}
+                <input type="text" class="form-control" name="ic" id="ic" placeholder="IČ" required>
+                <input type="text" class="form-control" name="dic" id="dic" placeholder="DIČ" required>
+            {% endif %}
+            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+            <input type="submit" class="btn btn-secondary" value="Add">
+            <a class="btn btn-outline-secondary"
+               href="{{ url_for('add_specific_customer', type_of_customer=other) }}">Add {{ other }} instead</a>
+        </form>
+    </div>
+{% endblock %}

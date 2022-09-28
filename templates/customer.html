@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'customer_detail.html' %}
+    <form action="{{ url_for('new_order', customer_id=customer.id) }}" method="post">
+        <input class="btn btn-outline-secondary" type="submit" value="Create new order">
+    </form>
+    <h2>Orders</h2>
+    {% for order in customer.orders %}
+        {% include 'order_detail.html' %}
+        <a class="btn btn-outline-secondary"
+           href="{{ url_for('show_order', customer_id=customer.id, order_id=order.id) }}">Show order detail</a>
+    {% else %}
+        No orders
+    {% endfor %}
+{% endblock %}

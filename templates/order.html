@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'order_detail.html' %}
+    <a class="btn btn-outline-secondary"
+       href="{{ url_for('add_items', customer_id=customer_id, order_id=order_id) }}">Add new items</a>
+    <h2>Items</h2>
+    {% for item in order.items %}
+        {% include 'item_detail.html' %}
+    {% else %}
+        No items
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+<div>
+    <b>Item #{{ item.id }}</b><br>
+    price: {{ item.price }}<br>
+    description: {{ item.description }}<br>
+    <form action="{{ url_for('toggl_item', order_id=order.id, item_id=item.id, source=request.endpoint) }}" method="post">
+        <input class="btn btn-outline-secondary" type="submit"
+               value="{% if item in order.items %}remove{% else %}add{% endif %}">
+    </form>
+</div>

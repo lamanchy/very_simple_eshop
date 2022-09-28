@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a class="btn btn-outline-secondary" href="{{ url_for('add_customer') }}">Add customer</a>
+    <h2>Customers</h2>
+    {% for customer in customers %}
+        {% include 'customer_detail.html' %}
+        <a class="btn btn-outline-secondary" href="{{ url_for('show_customer', id=customer.id) }}">Show customer detail</a>
+    {% else %}
+        No customers
+    {% endfor %}
+{% endblock %}

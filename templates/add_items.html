@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'order_detail.html' %}
+    {% for item in items %}
+        {% include 'item_detail.html' %}
+    {% endfor %}
+{% endblock %}
